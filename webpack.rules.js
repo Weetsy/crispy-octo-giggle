@@ -5,6 +5,12 @@ module.exports = [
     use: 'node-loader',
   },
   {
+    test: /\.(jpg|jpeg|png|svg)$/,
+    use: {
+      loader: 'url-loader',
+    },
+  },
+  {
     test: /\.(m?js|node)$/,
     parser: { amd: false },
     use: {
@@ -20,8 +26,8 @@ module.exports = [
     use: {
       loader: 'ts-loader',
       options: {
-        transpileOnly: true
-      }
-    }
+        transpileOnly: true,
+      },
+    },
   },
 ];
