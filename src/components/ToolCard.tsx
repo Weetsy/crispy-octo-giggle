@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Card } from 'react-bootstrap';
+import { BrowserRouter as Router, Link, Route,
+  Switch, useRouteMatch, useParams } from 'react-router-dom';
 
 type CardProps = {
   routePath: string;
@@ -14,15 +16,18 @@ export const ToolCard: FunctionComponent<CardProps> = ({
   title,
   description,
 }) => {
+  let match = useRouteMatch();
   return (
-    <a href={routePath}>
-      <Card className="mt-3" style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={imageUrl} />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-        </Card.Body>
-      </Card>
-    </a>
+    <Router>
+      <Link to={routePath}>
+        <Card className="mt-3" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={imageUrl} />
+          <Card.Body>
+            <Card.Title>{title}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Link>
+    </Router>
   );
 };
