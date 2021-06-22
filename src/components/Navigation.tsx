@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const Navigation: FunctionComponent = () => {
   return (
@@ -8,8 +9,8 @@ export const Navigation: FunctionComponent = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/autodocker">Auto Docker</Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="/autodocker">Auto Doc</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

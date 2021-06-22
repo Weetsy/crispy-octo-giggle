@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const Footer: FunctionComponent = () => {
   return (
@@ -13,7 +14,7 @@ export const Footer: FunctionComponent = () => {
       <Container>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Footer Link</Nav.Link>
+            <Link to="/">Footer Link</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

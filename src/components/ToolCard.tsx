@@ -18,16 +18,14 @@ export const ToolCard: FunctionComponent<CardProps> = ({
 }) => {
   let match = useRouteMatch();
   return (
-    <Router>
-      <Link to={routePath}>
-        <Card className="mt-3" style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={imageUrl} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Text>{description}</Card.Text>
-          </Card.Body>
-        </Card>
-      </Link>
-    </Router>
+    <Link to={routePath}>
+      <Card className="mt-3" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={imageUrl} />
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{description}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Link>
   );
 };

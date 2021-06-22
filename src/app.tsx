@@ -5,10 +5,10 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { AutoDocker } from './components/AutoDocker';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function render() {
-  ReactDOM.render(
+function App() {
+  return(
     <Router>
         <div>
           <Navigation />
@@ -18,8 +18,15 @@ function render() {
           </Switch>
           <Footer />
         </div>
-    </Router>,
-    document.body
+    </Router>
+  );
+}
+
+function render() {
+  console.log("This is running");
+  ReactDOM.render(
+    <App />,
+    document.getElementById('root')
   );
 }
 
